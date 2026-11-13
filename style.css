@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --paper: #fafaf9;
+  --ink: #30322f;
+  --muted: #686d66;
+  --link: #47675e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.55 Arial, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  width: min(100% - 48px, 760px);
+  margin-inline: auto;
+  padding-block: clamp(42px, 9vh, 112px) 44px;
+}
+h1, h2, p, ul { margin: 0; }
+h1 { font-size: 32px; font-weight: 650; letter-spacing: -.04em; line-height: 1.18; }
+h2 { font-size: 16px; font-weight: 650; line-height: 1.5; margin-bottom: 10px; }
+.subtitle { color: var(--muted); margin-top: 12px; }
+.bio { max-width: 690px; margin-top: 21px; }
+section, nav { margin-top: 30px; }
+header + section { margin-top: 40px; }
+ul { list-style: none; padding: 0; }
+li { line-height: 1.5; }
+.entries li, .project { padding-block: 4px; }
+.entries span, .summary { color: var(--muted); margin-inline-start: 5px; }
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+nav a { display: inline-block; margin-right: 14px; }
+.skip { position: absolute; top: 8px; left: 8px; transform: translateY(-160%); background: var(--paper); }
+.skip:focus { transform: none; }
+.projects { width: fit-content; max-width: 100%; }
+.projects li { position: relative; }
+.project { display: block; text-decoration: none; }
+.project:is(:hover, :focus-visible) > span:first-child { text-decoration: underline; }
+.preview {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: calc(100% + 22px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--preview-width, 240px);
+  height: auto;
+  aspect-ratio: 1.56;
+  object-fit: contain;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px 14px #303b3517;
+}
+.preview[src$=".svg"] { padding: 14px; }
+.show-preview .preview { display: block; }
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  background: #e5e6e1;
+  pointer-events: none;
+}
+.intro-piece { position: absolute; inset: 0; background: var(--paper); }
+@media (max-width: 650px) {
+  main { width: calc(100% - 40px); padding-block: 38px; }
+  h1 { font-size: 30px; }
+  .projects { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce), print { .intro { display: none; } }
