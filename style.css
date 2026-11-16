@@ -29,8 +29,7 @@ h2 + * { margin-top: 14px; }
 .profiles a { max-width: 100%; overflow-wrap: anywhere; }
 .contents a, .profiles a { padding-block: 4px; }
 .overview { padding-bottom: 25px; }
-.intro { max-width: 52ch; font-size: 1.25rem; text-wrap: pretty; }
-.internship { margin-top: 10px; }
+.intro { max-width: 60ch; text-wrap: pretty; }
 a {
   color: inherit;
   text-decoration-color: #a49e93;
@@ -45,15 +44,9 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .experience-list { display: grid; gap: 20px; }
 .experience-list h3 { font-size: 1rem; font-weight: 400; }
 .details { margin-block: 2px 6px; font-size: .9375rem; color: var(--muted); }
-.entries li {
-  display: grid;
-  grid-template-columns: 10rem minmax(0, 1fr);
-  align-items: baseline;
-  column-gap: 16px;
-  padding-block: 6px;
-}
+.entries { display: grid; row-gap: 12px; }
 strong, .project { font-weight: 600; }
-.project { justify-self: start; }
+.project { margin-inline-end: .25em; }
 .entries li > span { color: var(--muted); }
 .preview {
   display: none;
@@ -68,8 +61,8 @@ strong, .project { font-weight: 600; }
 }
 .preview.visible { display: block; }
 .assembly {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  inset: 0 0 auto;
   z-index: 2;
   overflow: hidden;
   pointer-events: none;
@@ -82,10 +75,8 @@ strong, .project { font-weight: 600; }
   a:hover { text-decoration-color: currentColor; }
 }
 @media (max-width: 620px) {
-  .intro { font-size: 1.125rem; }
   .experience-list h3 strong { display: block; }
   .role-separator { display: none; }
-  .entries li { grid-template-columns: 1fr; padding-block: 6px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }

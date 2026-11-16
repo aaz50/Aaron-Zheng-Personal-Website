@@ -34,6 +34,7 @@ function assemblePage() {
   const rows = Math.max(1, Math.round(height / size));
   const overlay = document.createElement("div");
   overlay.className = "assembly";
+  overlay.style.height = height + "px";
   overlay.inert = true;
   overlay.setAttribute("aria-hidden", "true");
 
@@ -119,9 +120,17 @@ function assemblePage() {
     overlay.remove();
     animations.forEach(animation => animation.cancel());
   };
-  for (const event of ["resize", "scroll", "pointerdown", "keydown", "pagehide"]) {
-    window.addEventListener(event, finish, { passive: true, signal: listeners.signal });
-  }
+  const options = { passive: true, signal: listeners.signal };
+  window.addEventListener("pagehide", finish, options);
+  window.addEventListener("resize", () => {
+    if (document.documentElement.clientWidth !== width) finish();
+  }, options);
+  window.addEventListener("click", event => {
+    if (event.target instanceof Element && event.target.closest("a")) finish();
+  }, options);
+  window.addEventListener("keydown", event => {
+    if (event.key === "Escape") finish();
+  }, options);
   motion.addEventListener("change", finish, { signal: listeners.signal });
   Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
     if (overlay.isConnected) finish();

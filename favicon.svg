@@ -1,7 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
-    path { fill: #272622; }
-    @media (prefers-color-scheme: dark) { path { fill: #faf9f7; } }
+    .left { fill: #07878d; }
+    .slash { fill: #525963; }
+    .right { fill: #a01961; }
+    @media (prefers-color-scheme: dark) {
+      .left { fill: #24b6ba; }
+      .slash { fill: #aab0b9; }
+      .right { fill: #e05597; }
+    }
   </style>
-  <path d="M5 9h7c1 0 1-1 .5-2a4 4 0 1 1 7 0c-.5 1-.5 2 .5 2h7v7c0 1-1 1-2 .5a4 4 0 1 0 0 7c1-.5 2-.5 2 .5v5H5z"/>
+  <path class="left" d="M11.5 7v5L5 16l6.5 4v5L.5 18v-4z"/>
+  <path class="slash" d="M17 5h4l-6 22h-4z"/>
+  <path class="right" d="M20.5 7 31.5 14v4l-11 7v-5l6.5-4-6.5-4z"/>
 </svg>
