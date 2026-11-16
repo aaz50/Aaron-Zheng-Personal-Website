@@ -3,58 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fafaf9">
-  <meta name="description" content="Aaron Zheng, Computer Science student at the University of Pittsburgh. Experience and projects in software and systems.">
+  <meta name="theme-color" content="#faf9f7">
   <meta property="og:title" content="Aaron Zheng">
   <meta property="og:description" content="Software projects and experience.">
   <title>Aaron Zheng</title>
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#experience">Skip to experience</a>
-  <main>
-    <header>
+  <a class="skip" href="#about">Skip to about</a>
+  <main class="page">
+    <header class="overview">
+      <nav class="contents" aria-label="On this page">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <h1>Aaron Zheng</h1>
-      <p class="bio">Computer Science major with a minor in Economics.  </p>
     </header>
-    <section id="experience">
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p class="intro">I’m a computer science student at the University of Pittsburgh. I build web and mobile apps, and I’ve worked on payment systems and developer tools.</p>
+    </section>
+
+    <section id="experience" class="section">
       <h2>Experience</h2>
-      <ul class="entries">
-        <li>Software Engineer Intern <span>Erie Insurance</span></li>
-        <li>Software Engineer Intern <span>Gaida Corporation</span></li>
+      <ul class="experience-list">
+        <li>
+          <h3><strong>Erie Insurance</strong> <span class="role-separator" aria-hidden="true">· </span>Software Engineer Intern</h3>
+          <p class="details">May–Aug 2026 · Erie, PA</p>
+          <p>Cut AWS ECR image deletion turnaround from two weeks to minutes by automating ticket-based cleanup in GitLab CI/CD with protected-tag checks.</p>
+        </li>
+        <li>
+          <h3><strong>Ripple</strong> <span class="role-separator" aria-hidden="true">· </span>XRPL Student Builder Resident</h3>
+          <p class="details">Mar–Apr 2026 · London, UK</p>
+          <p>Built server-side payment verification for DropIn that checked ledger finality, delivered amounts, and token issuers to reject partial payments and wrong-token transactions.</p>
+        </li>
+        <li>
+          <h3><strong>Gaida Corporation</strong> <span class="role-separator" aria-hidden="true">· </span>Software Engineer Intern</h3>
+          <p class="details">May–Aug 2025 · Remote</p>
+          <p>Cut user search time from minutes to seconds by adding Firestore indexing and pagination to a Next.js admin dashboard.</p>
+        </li>
       </ul>
     </section>
-    <section id="projects">
+
+    <section id="projects" class="section">
       <h2>Projects</h2>
-      <ul class="projects">
+      <ul class="entries">
         <li>
-          <a class="project" href="https://github.com/aaz50/BackedX"><span>BackedX</span> <span class="summary">Asset-backed NFTs on the XRP Ledger.</span></a>
-          <img class="preview" src="previews/backedx.webp" alt="BackedX home page" width="260" height="166" decoding="async">
+          <a class="project" href="https://github.com/aaz50/DropIn">DropIn</a>
+          <span>Pay for individual articles with XRP or stablecoins.</span>
+          <img class="preview" src="previews/dropin.webp" alt="" width="260" height="166">
         </li>
         <li>
-          <a class="project" href="https://github.com/aaz50/DropIn"><span>DropIn</span> <span class="summary">Pay for one article at a time.</span></a>
-          <img class="preview" src="previews/dropin.webp" alt="DropIn article payment interface" width="260" height="166" decoding="async">
+          <a class="project" href="https://github.com/aaz50/Mise">Mise</a>
+          <span>Turn handwritten kitchen supply lists into simulated supplier carts. Two OCR passes flag discrepancies for review.</span>
+          <img class="preview" src="previews/mise.webp" alt="" width="260" height="166">
         </li>
         <li>
-          <a class="project" href="https://github.com/aaz50/RollodorVision"><span>RollodorVision</span> <span class="summary">A voice-controlled ashtray on wheels.</span></a>
-          <img class="preview" src="previews/rollodor.webp" alt="Rollodor robot control panel" width="260" height="166" decoding="async">
+          <a class="project" href="https://github.com/aaz50/BackedX">BackedX</a>
+          <span>Mint and trade NFTs backed by XRP escrow. Placed third in the Ripple track at TartanHacks.</span>
+          <img class="preview" src="previews/backedx.webp" alt="" width="260" height="166">
         </li>
         <li>
-          <a class="project" href="https://github.com/aaz50/LaunchKit"><span>LaunchKit</span> <span class="summary">Launch materials from a single app brief.</span></a>
-          <img class="preview" src="previews/launchkit.webp" alt="LaunchKit project brief form" width="260" height="166" decoding="async">
-        </li>
-        <li>
-          <a class="project" href="https://github.com/aaz50/Mise"><span>Mise</span> <span class="summary">Kitchen notes into supply orders.</span></a>
-          <img class="preview" src="previews/mise.webp" alt="Mise supply order review" width="260" height="166" decoding="async">
+          <a class="project" href="https://github.com/aaz50/RollodorVision">RollodorVision</a>
+          <span>Vision model for a robotic Belmet Rollodor.</span>
+          <img class="preview" src="previews/rollodor.webp" alt="" width="260" height="166">
         </li>
       </ul>
     </section>
-    <nav aria-label="Links">
-      <h2>Links</h2>
-      <a href="https://github.com/aaz50">GitHub</a>
-      <a href="https://www.linkedin.com/in/aaronzheng06">LinkedIn</a>
-    </nav>
+
+    <section id="contact" class="section">
+      <h2 id="links">Contact</h2>
+      <div class="profiles">
+        <a href="mailto:aaronn.zheng@gmail.com">aaronn.zheng@gmail.com</a>
+        <a href="https://github.com/aaz50">github.com/aaz50</a>
+        <a href="https://www.linkedin.com/in/aaronzheng06">linkedin.com/in/aaronzheng06</a>
+      </div>
+    </section>
   </main>
   <script src="main.js"></script>
 </body>
